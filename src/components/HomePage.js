@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../images/pexels-ollivves-1078983.jpg";
 
 function HomePage() {
+  const [searchData, setSearchData] = useState({
+    location: "",
+    checkInDate: "",
+    checkOutDate: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setSearchData({ ...searchData, [name]: value });
+  };
+
+  const handleSearch = () => {
+    // Search functionality
+  };
+
   return (
     <div className="main">
       <nav className="navbar navbar-expand-lg bg-body-transparent">
@@ -62,8 +77,31 @@ function HomePage() {
             </div>
           </div>
           <div className="col-md-4 p-0">
-            <div className="parent-img">
-              <h1>Hello</h1>
+            <div className="parent-srch">
+              <input
+                type="text"
+                name="location"
+                placeholder="Enter Location"
+                value={searchData.location}
+                onChange={handleInputChange}
+              />
+              <input
+                type="date"
+                name="checkInDate"
+                value={searchData.checkInDate}
+                onChange={handleInputChange}
+              />
+
+              <input
+                type="date"
+                name="checkOutDate"
+                value={searchData.checkOutDate}
+                onChange={handleInputChange}
+              />
+
+              <button className="src-btn" onClick={handleSearch}>
+                Search
+              </button>
             </div>
           </div>
         </div>
