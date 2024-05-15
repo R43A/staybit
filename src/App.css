@@ -90,7 +90,7 @@ p.para-txt {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 100;
-    font-size: larger;
+    font-size: medium;
   }
 }
 
@@ -107,6 +107,7 @@ a.child-lnk {
   color: white;
   padding: 7px 20px;
   background: black;
+  transition: 0.3s ease;
 }
 
 @media (min-width: 900px) {
@@ -117,4 +118,8 @@ a.child-lnk {
     padding: 7px 20px;
     background: black;
   }
+}
+
+a.child-lnk:active {
+  background: rgb(25, 25, 25);
 }
