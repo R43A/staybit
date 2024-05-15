@@ -90,13 +90,16 @@ function HomePage() {
                 name="checkInDate"
                 value={searchData.checkInDate}
                 onChange={handleInputChange}
+                className="date-input"
+                placeholder={searchData.checkInDate ? "" : "Check In"}
               />
-
               <input
                 type="date"
                 name="checkOutDate"
                 value={searchData.checkOutDate}
                 onChange={handleInputChange}
+                className="date-input"
+                placeholder={searchData.checkOutDate ? "" : "Check Out"}
               />
 
               <button className="src-btn" onClick={handleSearch}>
