@@ -50,6 +50,14 @@ function HomePage() {
                 <p className="para-txt">
                   Book Hotels, Flights and Stay packages at lowest price
                 </p>
+                <div className="parent-lnk">
+                  <Link to="/" className="child-lnk">
+                    Explore
+                  </Link>
+                  {/* <Link to="/" className="child-lnk">
+                    Book Here
+                  </Link> */}
+                </div>
               </div>
             </div>
           </div>

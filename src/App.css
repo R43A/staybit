@@ -89,6 +89,32 @@ p.para-txt {
   p.para-txt {
     font-family: "Poppins", sans-serif;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
+    font-size: larger;
+  }
+}
+
+.parent-lnk {
+  height: 0;
+  width: fit-content;
+  margin-top: 24px;
+}
+
+a.child-lnk {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-size: small;
+  color: white;
+  padding: 7px 20px;
+  background: black;
+}
+
+@media (min-width: 900px) {
+  a.child-lnk {
+    text-decoration: none;
+    font-size: large;
+    color: white;
+    padding: 7px 20px;
+    background: black;
   }
 }
