@@ -77,3 +77,18 @@ img.child-img.img-fluid {
     font-size: 3.5rem;
   }
 }
+
+p.para-txt {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: x-small;
+}
+
+@media (min-width: 900px) {
+  p.para-txt {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+  }
+}

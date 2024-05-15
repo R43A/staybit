@@ -47,6 +47,9 @@ function HomePage() {
               />
               <div className="parent-txt">
                 <h1 className="display-4">Enjoy your dream vacation</h1>
+                <p className="para-txt">
+                  Book Hotels, Flights and Stay packages at lowest price
+                </p>
               </div>
             </div>
           </div>
