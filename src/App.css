@@ -160,6 +160,11 @@ input[type="date"] {
   font-size: small;
 }
 
+.date-input {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px; /* Replace with your preferred font size */
+}
+
 button.src-btn {
   width: 90%;
   border: none;

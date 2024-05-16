@@ -3,19 +3,21 @@ import { Link } from "react-router-dom";
 import backgroundImage from "../images/pexels-ollivves-1078983.jpg";
 
 function HomePage() {
-  const [searchData, setSearchData] = useState({
-    location: "",
-    checkInDate: "",
-    checkOutDate: "",
-  });
+  const currentDate = new Date();
+  const tomorrowDate = new Date();
+  tomorrowDate.setDate(currentDate.getDate() + 1);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setSearchData({ ...searchData, [name]: value });
-  };
+  // State variables for check-in and check-out dates
+  const [checkInDate, setCheckInDate] = useState(
+    currentDate.toISOString().split("T")[0]
+  );
+  const [checkOutDate, setCheckOutDate] = useState(
+    tomorrowDate.toISOString().split("T")[0]
+  );
 
+  // Function to handle search button click
   const handleSearch = () => {
-    // Search functionality
+    // Search logic here
   };
 
   return (
@@ -41,11 +43,6 @@ function HomePage() {
                   Contact Us
                 </Link>
               </li>
-              {/* <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Booking
-                </Link>
-              </li> */}
             </ul>
           </div>
         </div>
@@ -69,37 +66,27 @@ function HomePage() {
                   <Link to="/" className="child-lnk">
                     Explore
                   </Link>
-                  {/* <Link to="/" className="child-lnk">
-                    Book Here
-                  </Link> */}
                 </div>
               </div>
             </div>
           </div>
           <div className="col-md-4 p-0">
             <div className="parent-srch">
-              <input
-                type="text"
-                name="location"
-                placeholder="Enter Location"
-                value={searchData.location}
-                onChange={handleInputChange}
-              />
+              <input type="text" name="location" placeholder="Enter Location" />
+
               <input
                 type="date"
                 name="checkInDate"
-                value={searchData.checkInDate}
-                onChange={handleInputChange}
                 className="date-input"
-                placeholder={searchData.checkInDate ? "" : "Check In"}
+                value={checkInDate}
+                onChange={(e) => setCheckInDate(e.target.value)}
               />
               <input
                 type="date"
                 name="checkOutDate"
-                value={searchData.checkOutDate}
-                onChange={handleInputChange}
                 className="date-input"
-                placeholder={searchData.checkOutDate ? "" : "Check Out"}
+                value={checkOutDate}
+                onChange={(e) => setCheckOutDate(e.target.value)}
               />
 
               <button className="src-btn" onClick={handleSearch}>
