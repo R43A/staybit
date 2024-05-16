@@ -246,8 +246,7 @@ p.prc-txt {
 }
 
 @media (max-width: 720px) {
-  h6.parent-h6-cls {
-    /* margin: 4px 14px; */
+  /* h6.parent-h6-cls {
     font-family: "Poppins", sans-serif;
     color: #101010;
     margin-bottom: 0;
@@ -256,7 +255,6 @@ p.prc-txt {
   }
 
   .child-side-p-txt {
-    /* margin-left: 14px; */
     font-size: x-small;
     font-weight: 500;
     margin-bottom: 0;
@@ -268,5 +266,10 @@ p.prc-txt {
     font-weight: 600;
     font-family: "Poppins", sans-serif;
     color: #454545;
+  } */
+
+  img.img-fluid.child-cont-img {
+    height: 9vh;
+    border-radius: 7px;
   }
 }
