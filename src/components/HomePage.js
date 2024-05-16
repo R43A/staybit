@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../images/pexels-ollivves-1078983.jpg";
+import contentImage from "../images/pexels-pixabay-261108.jpg";
 
 function HomePage() {
   const currentDate = new Date();
@@ -14,7 +15,7 @@ function HomePage() {
   const [checkOutDate, setCheckOutDate] = useState(
     tomorrowDate.toISOString().split("T")[0]
   );
-  const [guests, setGuests] = useState(1); // Default number of guests is 1
+  const [guests, setGuests] = useState(null); // Default number of guests is 1
 
   // Function to handle search button click
   const handleSearch = () => {
@@ -72,6 +73,9 @@ function HomePage() {
             </div>
           </div>
           <div className="col-md-4 p-0">
+            <div className="side-p-txt">
+              <p>Find your stay</p>
+            </div>
             <div className="parent-srch">
               <input type="text" name="location" placeholder="Enter Location" />
 
@@ -102,6 +106,36 @@ function HomePage() {
               <button className="src-btn" onClick={handleSearch}>
                 Search
               </button>
+            </div>
+
+            <div className="side-head-cont">
+              <h1 className="display-4 side-txt">Popular Stays</h1>
+              <p className="parent-side-p-txt">In Mumbai, India</p>
+              <div className="scroll-cls"></div>
+              <Link to="/" className="lst-cont">
+                <img
+                  src={contentImage}
+                  alt="contentImage"
+                  className="img-fluid child-cont-img"
+                />
+                <div className="parent-side-txt">
+                  <p className="child-side-p-txt">Entire bunglow in bay area</p>
+                  <h6 className="parent-h6-cls">kantiang View Resort</h6>
+                  <p className="prc-txt">$25 / night</p>
+                </div>
+              </Link>
+              {/* <div className="lst-cont">
+                <img
+                  src={contentImage}
+                  alt="contentImage"
+                  className="img-fluid child-cont-img"
+                />
+                <div className="parent-side-txt">
+                  <p className="child-side-p-txt">Entire bunglow in bay area</p>
+                  <h6 className="parent-h6-cls">kantiang View Resort</h6>
+                  <p className="prc-txt">$25 / night</p>
+                </div>
+              </div> */}
             </div>
           </div>
         </div>
