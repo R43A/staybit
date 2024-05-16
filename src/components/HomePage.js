@@ -7,13 +7,14 @@ function HomePage() {
   const tomorrowDate = new Date();
   tomorrowDate.setDate(currentDate.getDate() + 1);
 
-  // State variables for check-in and check-out dates
+  // State variables for check-in, check-out dates, and number of guests
   const [checkInDate, setCheckInDate] = useState(
     currentDate.toISOString().split("T")[0]
   );
   const [checkOutDate, setCheckOutDate] = useState(
     tomorrowDate.toISOString().split("T")[0]
   );
+  const [guests, setGuests] = useState(1); // Default number of guests is 1
 
   // Function to handle search button click
   const handleSearch = () => {
@@ -87,6 +88,15 @@ function HomePage() {
                 className="date-input"
                 value={checkOutDate}
                 onChange={(e) => setCheckOutDate(e.target.value)}
+              />
+
+              <input
+                type="text"
+                name="guests"
+                placeholder="1 Adult, 0 Children, 1 Room"
+                className="guest-input"
+                value={guests}
+                onChange={(e) => setGuests(e.target.value)}
               />
 
               <button className="src-btn" onClick={handleSearch}>
