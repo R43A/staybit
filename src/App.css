@@ -333,12 +333,20 @@ div#carouselExampleCaptions {
   margin: 27px 36px 34px 7px;
 }
 
-img.d-block.w-100 {
-  filter: brightness(0.5);
+.carousel-caption.d-md-block {
+  background: linear-gradient(to top, black, #000000c4, transparent);
+  width: -webkit-fill-available;
+  margin: -21px -64px;
+  height: 25vh;
 }
+
+/* img.d-block.w-100 {
+  filter: brightness(0.5);
+} */
 
 h5 {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: large;
+  margin: 66px 0;
 }
