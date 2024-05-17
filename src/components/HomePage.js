@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../images/pexels-ollivves-1078983.jpg";
-import contentImage from "../images/pexels-pixabay-261108.jpg";
+import contentImage from "../images/pexels-boonkong-boonpeng-442952-1134176.jpg";
+import contentImage2 from "../images/pexels-quang-nguyen-vinh-222549-14012230.jpg";
+import contentImage3 from "../images/pexels-pixabay-258154.jpg";
 
 function HomePage() {
   const currentDate = new Date();
@@ -72,7 +74,7 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="col-md-4 p-0">
+          <div className="col-md-4 p-0 scrollable-section">
             <div className="side-p-txt">
               <p>Find your stay</p>
             </div>
@@ -111,7 +113,6 @@ function HomePage() {
             <div className="side-head-cont">
               <h1 className="display-4 side-txt">Popular Stays</h1>
               <p className="parent-side-p-txt">In Mumbai, India</p>
-              <div className="scroll-cls"></div>
               <Link to="/" className="lst-cont">
                 <img
                   src={contentImage}
@@ -124,18 +125,94 @@ function HomePage() {
                   <p className="prc-txt">$25 / night</p>
                 </div>
               </Link>
-              {/* <div className="lst-cont">
+              <Link to="/" className="lst-cont">
                 <img
-                  src={contentImage}
+                  src={contentImage2}
                   alt="contentImage"
                   className="img-fluid child-cont-img"
                 />
                 <div className="parent-side-txt">
                   <p className="child-side-p-txt">Entire bunglow in bay area</p>
-                  <h6 className="parent-h6-cls">kantiang View Resort</h6>
-                  <p className="prc-txt">$25 / night</p>
+                  <h6 className="parent-h6-cls">Gloriya Hillside Villa</h6>
+                  <p className="prc-txt">$60 / night</p>
                 </div>
-              </div> */}
+              </Link>
+            </div>
+            <div className="side-head-cont">
+              <h1 className="display-4 side-txt">Explore More</h1>
+              <p className="parent-side-p-txt">People Also Love This</p>
+
+              <div id="carouselExampleIndicators" className="carousel slide">
+                <div className="carousel-indicators">
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    className="active"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"
+                  ></button>
+                </div>
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src={contentImage}
+                      className="d-block w-100 img-fluid"
+                      alt="..."
+                    />
+                  </div>
+                  <div className="carousel-item">
+                    <img
+                      src={contentImage2}
+                      className="d-block w-100 img-fluid"
+                      alt="..."
+                    />
+                  </div>
+                  <div className="carousel-item">
+                    <img
+                      src={contentImage3}
+                      className="d-block w-100 img-fluid"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
