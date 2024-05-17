@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../images/pexels-ollivves-1078983.jpg";
 import contentImage from "../images/pexels-boonkong-boonpeng-442952-1134176.jpg";
 import contentImage2 from "../images/pexels-quang-nguyen-vinh-222549-14012230.jpg";
 import contentImage3 from "../images/pexels-pixabay-258154.jpg";
+
+// Sample static hotel data
+const hotelsData = [
+  {
+    id: 1,
+    name: "Kantiang View Resort",
+    location: "Mumbai, India",
+    image: contentImage,
+    price: 25,
+  },
+  // Add more hotel data as needed
+];
 
 function HomePage() {
   const currentDate = new Date();
@@ -18,6 +30,46 @@ function HomePage() {
     tomorrowDate.toISOString().split("T")[0]
   );
   const [guests, setGuests] = useState(null); // Default number of guests is 1
+
+  const [location, setLocation] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  const suggestionsRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (suggestionsRef.current) {
+        const inputRect = suggestionsRef.current.getBoundingClientRect();
+        suggestionsRef.current.style.top = `${inputRect.bottom}px`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleLocationChange = (e) => {
+    const enteredLocation = e.target.value;
+    setLocation(enteredLocation);
+
+    // Filter hotels based on the entered location
+    const filteredSuggestions = hotelsData.filter((hotel) =>
+      hotel.location.toLowerCase().includes(enteredLocation.toLowerCase())
+    );
+
+    // Update suggestions state
+    setSuggestions(filteredSuggestions);
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    // Update search bar value with the clicked suggestion
+    setLocation(suggestion);
+    // Clear suggestions
+    setSuggestions([]);
+  };
 
   // Function to handle search button click
   const handleSearch = () => {
@@ -101,7 +153,26 @@ function HomePage() {
               <p>Find your stay</p>
             </div>
             <div className="parent-srch">
-              <input type="text" name="location" placeholder="Enter Location" />
+              <input
+                type="text"
+                name="location"
+                placeholder="Enter Location"
+                value={location}
+                onChange={handleLocationChange}
+              />
+              {location && suggestions.length > 0 && (
+                <div className="suggestions-dropdown">
+                  {suggestions.map((hotel) => (
+                    <div
+                      key={hotel.id}
+                      className="suggestion-item"
+                      onClick={() => handleSuggestionClick(hotel.location)}
+                    >
+                      {hotel.location}
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <input
                 type="date"
@@ -135,7 +206,7 @@ function HomePage() {
             <div className="side-head-cont">
               <h1 className="display-4 side-txt">Popular Stays</h1>
               <p className="parent-side-p-txt">In Mumbai, India</p>
-              <Link to="/" className="lst-cont">
+              <Link to="/details" className="lst-cont">
                 <img
                   src={contentImage}
                   alt="contentImage"
