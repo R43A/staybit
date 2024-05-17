@@ -334,10 +334,10 @@ div#carouselExampleCaptions {
 }
 
 .carousel-caption.d-md-block {
-  background: linear-gradient(to top, black, #000000c4, transparent);
+  background: linear-gradient(to top, black, #000000a3, #00000000, transparent);
   width: -webkit-fill-available;
-  margin: -21px -64px;
-  height: 25vh;
+  margin: -20px -64px;
+  height: 26vh;
 }
 
 /* img.d-block.w-100 {
