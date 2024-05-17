@@ -340,6 +340,21 @@ div#carouselExampleCaptions {
   height: 26vh;
 }
 
+@media (max-width: 720px) {
+  .carousel-caption.d-md-block {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.778),
+      #00000092,
+      #00000000,
+      transparent
+    );
+    width: -webkit-fill-available;
+    margin: -20px -64px;
+    height: 26vh;
+  }
+}
+
 /* img.d-block.w-100 {
   filter: brightness(0.5);
 } */
