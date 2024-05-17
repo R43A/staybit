@@ -321,80 +321,24 @@ p.prc-txt {
   margin-bottom: 10px; /* add some space between items */
 }
 
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+/* Media query for responsive mode */
+@media (max-width: 768px) {
+  .scrollable-section {
+    height: auto; /* Adjust height to fit content */
+    overflow-y: visible; /* Remove scrolling */
+  }
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.footer-left h3 {
-  margin: 0;
-  font-size: 24px;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
-  display: flex;
-  gap: 15px;
-}
-
-.footer-links li {
-  margin: 0;
-}
-
-.footer-links a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #ccc;
-}
-
-.footer-left p {
-  margin: 10px 0 0 0;
-  font-size: 14px;
-}
-
-.footer-right {
-  text-align: right;
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 10px;
-}
-
-.social-link {
-  color: #fff;
-  font-size: 18px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-link:hover {
-  color: #ccc;
-}
-
-.footer-right p {
-  margin: 0;
-  font-size: 14px;
-}
-
-div#carouselExampleIndicators {
+div#carouselExampleCaptions {
   margin: 27px 36px 34px 7px;
+}
+
+img.d-block.w-100 {
+  filter: brightness(0.5);
+}
+
+h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: large;
 }
