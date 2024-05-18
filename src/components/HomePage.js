@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../images/pexels-ollivves-1078983.jpg";
 import contentImage from "../images/pexels-boonkong-boonpeng-442952-1134176.jpg";
-import contentImage2 from "../images/pexels-quang-nguyen-vinh-222549-14012230.jpg";
-import contentImage3 from "../images/pexels-pixabay-258154.jpg";
+// import contentImage2 from "../images/pexels-quang-nguyen-vinh-222549-14012230.jpg";
+// import contentImage3 from "../images/pexels-pixabay-258154.jpg";
 
 // Sample static hotel data
 const hotelsData = [
@@ -78,7 +78,10 @@ function HomePage() {
 
   return (
     <div className="main">
-      <nav className="navbar navbar-expand-lg bg-body-transparent">
+      <nav
+        className="navbar navbar-expand-lg bg-body-transparent"
+        style={{ boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}
+      >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <div className="nav-txt">
@@ -218,7 +221,7 @@ function HomePage() {
                   <p className="prc-txt">$25 / night</p>
                 </div>
               </Link>
-              <Link to="/" className="lst-cont">
+              {/* <Link to="/" className="lst-cont">
                 <img
                   src={contentImage2}
                   alt="contentImage"
@@ -229,9 +232,9 @@ function HomePage() {
                   <h6 className="parent-h6-cls">Gloriya Hillside Villa</h6>
                   <p className="prc-txt">$60 / night</p>
                 </div>
-              </Link>
+              </Link> */}
             </div>
-            <div className="side-head-cont">
+            {/* <div className="side-head-cont">
               <h1 className="display-4 side-txt">Explore More</h1>
               <p className="parent-side-p-txt">People Also Love This</p>
 
@@ -267,10 +270,10 @@ function HomePage() {
                     />
                     <div className="carousel-caption d-md-block">
                       <h5>First slide label</h5>
-                      {/* <p className="parent-side-p-txt text-white">
+                      <p className="parent-side-p-txt text-white">
                         Some representative placeholder content for the first
                         slide.
-                      </p> */}
+                      </p>
                     </div>
                   </div>
                   <div className="carousel-item">
@@ -281,10 +284,10 @@ function HomePage() {
                     />
                     <div className="carousel-caption d-md-block">
                       <h5>Second slide label</h5>
-                      {/* <p className="parent-side-p-txt text-white">
+                      <p className="parent-side-p-txt text-white">
                         Some representative placeholder content for the second
                         slide.
-                      </p> */}
+                      </p>
                     </div>
                   </div>
                   <div className="carousel-item">
@@ -295,10 +298,10 @@ function HomePage() {
                     />
                     <div className="carousel-caption d-md-block">
                       <h5>Third slide label</h5>
-                      {/* <p className="parent-side-p-txt text-white">
+                      <p className="parent-side-p-txt text-white">
                         Some representative placeholder content for the third
                         slide.
-                      </p> */}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -327,7 +330,7 @@ function HomePage() {
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
