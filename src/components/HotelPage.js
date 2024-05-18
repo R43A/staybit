@@ -145,11 +145,11 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="side-head-cont">
+            <div className="side-head-cont mb-31">
               <h1 className="display-4 side-txt">Amenities</h1>
               {/* <p className="parent-side-p-txt">In Mumbai, India</p> */}
               <div
-                className="lst-cont m-0 p-0"
+                className="lst-cont m-0 p-0 amnt-cont"
                 style={{
                   background: "none",
                   display: "flex",

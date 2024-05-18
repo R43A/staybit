@@ -189,6 +189,8 @@ button.src-btn {
 .side-head-cont {
   margin-left: 33px;
   margin-top: 56px;
+  margin-right: 33px;
+  margin-bottom: 56px;
 }
 
 h1.display-4.side-txt {
@@ -218,7 +220,7 @@ img.img-fluid.child-cont-img {
   display: flex;
   flex-wrap: wrap;
   padding: 15px 12px;
-  margin: 7px 33px 25px 0px;
+  /* margin: 7px 33px 25px 0px; */
   background: #f9f9f9;
   border-radius: 16px;
   text-decoration: none;
@@ -413,4 +415,13 @@ h5 {
 .icn-cls {
   padding: 0 28px 0px 16px;
   color: #434343;
+}
+
+@media (max-width: 720px) {
+  .amnt-cont {
+    background: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+  }
 }
