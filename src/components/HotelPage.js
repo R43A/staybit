@@ -194,7 +194,7 @@ function HomePage() {
                 </div>
               </div>
             </div> */}
-            <div className="side-head-cont mb-31">
+            <div className="side-head-cont">
               <h1 className="display-4 side-txt">Amenities</h1>
               {/* <p className="parent-side-p-txt">In Mumbai, India</p> */}
               <div
@@ -216,7 +216,7 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="side-head-cont mb-31">
+            <div className="side-head-cont mb-2">
               <h1 className="display-4 side-txt">Hotel Policies</h1>
               {/* <p className="parent-side-p-txt">In Mumbai, India</p> */}
               <div
@@ -247,7 +247,7 @@ function HomePage() {
             </div>
           </div>
           <div className="col-md-4 p-0">
-            <div className="side-head-cont ml-10">
+            <div className="side-head-cont mt-0">
               <h1 className="display-4 side-txt">Cancellation Rules</h1>
               {/* <p className="parent-side-p-txt">In Mumbai, India</p> */}
               <p className="child-side-p-txt">
