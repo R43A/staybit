@@ -216,7 +216,7 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="side-head-cont mb-2">
+            <div className="side-head-cont mb-0">
               <h1 className="display-4 side-txt">Hotel Policies</h1>
               {/* <p className="parent-side-p-txt">In Mumbai, India</p> */}
               <div
@@ -227,7 +227,7 @@ function HomePage() {
                   justifyContent: "space-around",
                 }}
               >
-                <ul>
+                <ul className="mb-0">
                   <li
                     className="child-side-p-txt"
                     style={{ fontWeight: "100" }}
@@ -247,7 +247,7 @@ function HomePage() {
             </div>
           </div>
           <div className="col-md-4 p-0">
-            <div className="side-head-cont mt-0">
+            <div className="side-head-cont mt-4">
               <h1 className="display-4 side-txt">Cancellation Rules</h1>
               {/* <p className="parent-side-p-txt">In Mumbai, India</p> */}
               <p className="child-side-p-txt">
