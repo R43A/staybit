@@ -22,6 +22,37 @@ function HomePage() {
   );
   const [guests, setGuests] = useState(""); // Default number of guests is 1
 
+  // Function to calculate the cancellation date
+  const getCancellationDate = (checkInDate) => {
+    const checkIn = new Date(checkInDate);
+    const cancellationDate = new Date(checkIn);
+    cancellationDate.setDate(checkIn.getDate() - 1);
+    return cancellationDate.toISOString().split("T")[0];
+  };
+
+  // Function to format the date in the desired format (DD MMM YY)
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, "0");
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    const month = monthNames[date.getMonth()];
+    const year = String(date.getFullYear()).slice(-2);
+    return `${day} ${month} ${year}`;
+  };
+
   return (
     <div className="main">
       <nav className="navbar navbar-expand-lg bg-body-transparent">
@@ -197,24 +228,43 @@ function HomePage() {
                 }}
               >
                 <ul>
-                  <li class="child-side-p-txt">
+                  <li
+                    className="child-side-p-txt"
+                    style={{ fontWeight: "100" }}
+                  >
                     Guests can check in using any local or outstation ID proof
                     (PAN card not accepted).
                   </li>
-                  {/* <li class="child-side-p-txt">
+                  <li
+                    className="child-side-p-txt"
+                    style={{ fontWeight: "100" }}
+                  >
                     As a complimentary benefit, your stay is now insured by
                     Acko.
-                  </li> */}
-                  {/* <li class="child-side-p-txt">
-                    This hotel is serviced under the trade name of Purvanchal
-                    Inn as per quality standards of OYO
-                  </li> */}
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="col-md-4 p-0">
-            <h1>Hello</h1>
+            <div className="side-head-cont ml-10">
+              <h1 className="display-4 side-txt">Cancellation Rules</h1>
+              {/* <p className="parent-side-p-txt">In Mumbai, India</p> */}
+              <p className="child-side-p-txt">
+                {`Free cancellation until ${formatDate(
+                  getCancellationDate(checkInDate)
+                )}`}{" "}
+              </p>
+              <p className="parent-side-p-txt">%100 money back</p>
+
+              <p className="child-side-p-txt" style={{ color: "red" }}>
+                <strong>
+                  {`After ${formatDate(
+                    getCancellationDate(checkInDate)
+                  )} No Refund`}{" "}
+                </strong>
+              </p>
+            </div>
           </div>
         </div>
       </div>
